@@ -20,7 +20,7 @@ export default function Home({ setScreen, theme, setTheme, eScore, pLog, setLibS
   const msgList = MOOD_MESSAGES[theme] || MOOD_MESSAGES.cheetah;
   const [msg, setMsg] = useState(() => msgList[Math.floor(Math.random() * msgList.length)]);
   useEffect(() => {
-    const list = getMoodMessages(lang)[theme] || getMoodMessages(lang).full;
+    const list = getMoodMessages(lang)[theme] || getMoodMessages(lang).cheetah;
     setMsg(list[Math.floor(Math.random() * list.length)]);
   }, [theme, lang]);
 
