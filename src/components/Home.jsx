@@ -17,7 +17,7 @@ export default function Home({ setScreen, theme, setTheme, eScore, pLog, setLibS
   const MOOD_MESSAGES = getMoodMessages(lang);
   const SECTIONS = getSections(lang);
   const RECOMMENDATIONS = getRecommendations(lang);
-  const msgList = MOOD_MESSAGES[theme] || MOOD_MESSAGES.full;
+  const msgList = MOOD_MESSAGES[theme] || MOOD_MESSAGES.cheetah;
   const [msg, setMsg] = useState(() => msgList[Math.floor(Math.random() * msgList.length)]);
   useEffect(() => {
     const list = getMoodMessages(lang)[theme] || getMoodMessages(lang).full;
@@ -189,7 +189,7 @@ export default function Home({ setScreen, theme, setTheme, eScore, pLog, setLibS
           <div style={{ ...label(TYPE.xs), color: tx("var(--txt)", OP.tertiary), letterSpacing: ".2em" }}>{L("for_you_now")}</div>
           <span onClick={() => setScreen("library")} style={{ ...label(TYPE.xs), color: T.accent, cursor: "pointer" }}>{L("all")}</span>
         </div>
-        {(RECOMMENDATIONS[theme] || RECOMMENDATIONS.full).map((r, ri) => {
+        {(RECOMMENDATIONS[theme] || RECOMMENDATIONS.cheetah).map((r, ri) => {
           const sec = SECTIONS.find((s) => s.id === r.sec);
           const lc = r.free ? "rgba(160,130,50,.8)" : (sec?.color || T.accent);
           return (
